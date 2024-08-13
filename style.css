@@ -1,0 +1,71 @@
+body,
+h2 {
+  background: #e3e3e3;
+  margin: 0;
+  padding: 0;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container {
+  margin: 20px auto;
+  width: fit-content;
+  background: #fff;
+  padding: 16px;
+  border-radius: 20px;
+}
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputRow {
+  padding: 0 20px;
+}
+.inputRow h2 {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  background-color: #fff;
+}
+.inputRow input {
+  border: none;
+  border-bottom: 1px solid #909090;
+}
+.start {
+  padding: 10px 16px;
+  background: green;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  margin: 10px 40px 0 0;
+}
+.stop {
+  padding: 10px 16px;
+  background: red;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+#bulbs {
+  margin: 10px auto;
+  padding: 16px;
+  border-radius: 20px;
+  width: 432px;
+}
+.bulb{
+  width: 20px;
+  height: 20px;
+  margin: 10px 10px 0 10px ;
+  border-radius: 50%;
+  background-color: #f5f1f1;
+  /* border: 1px solid #aea2a2; */
+}
+.bulbRow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
