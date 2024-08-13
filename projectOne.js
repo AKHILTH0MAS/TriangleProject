@@ -48,6 +48,7 @@ function runningLights() {
   if (delay == 0) {
     alert("Enter delay");
   } else {
+  document.querySelector(".start").style.display ="none";
     let j;
     timerId = null;
     timerId = setInterval(() => {
@@ -77,6 +78,7 @@ function runningLights() {
       }
     }, delay);
     console.log(`running TImer id ${timerId}`);
+    removeEventListener("")
   }
 }
 document
@@ -85,6 +87,7 @@ document
 document.querySelector(".start").addEventListener("click", runningLights);
 document.querySelector(".stop").addEventListener("click", () => {
   console.log(`xlosing timer id ${timerId}`);
+  document.querySelector(".start").style.display ="block";
   clearInterval(timerId);
   console.log(`closed timer id ${timerId}`);
 });
