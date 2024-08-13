@@ -21,6 +21,7 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+
 .inputRow {
   padding: 0 20px;
 }
@@ -33,6 +34,10 @@ h2 {
 .inputRow input {
   border: none;
   border-bottom: 1px solid #909090;
+}
+
+.inputRow input:focus{
+  outline: none;
 }
 .start {
   padding: 10px 16px;

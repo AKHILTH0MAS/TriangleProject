@@ -21,7 +21,8 @@ let colors = [
   "#DA70D6", // Bright Orchid
   "#8A2BE2", // Bright Blue Violet
 ];
-
+let timerId;
+let i = 0;
 function startFunction() {
   bulbContainer.innerHTML = "";
   let numberofrows = document.getElementById("numberofRows").value;
@@ -39,9 +40,8 @@ function startFunction() {
     } while (j < i + 2);
     bulbContainer.appendChild(bulbRow);
   }
+timerId = 0;
 }
-let i = 0;
-let timerId;
 function runningLights() {
   let delay = document.getElementById("timeOfDelay").value;
   let numberofrows = document.getElementById("numberofRows").value;
