@@ -26,7 +26,8 @@ let i = 0;
 function startFunction() {
   bulbContainer.innerHTML = "";
   let numberofrows = document.getElementById("numberofRows").value;
-  document.querySelector(".start").style.display = "block";
+  if(numberofrows <= 46)
+ { document.querySelector(".start").style.display = "block";
   bulbContainer.style.background = "#FFF";
   for (let i = 0; i < numberofrows; i++) {
     let bulbRow = document.createElement("div");
@@ -41,7 +42,10 @@ function startFunction() {
     } while (j < i + 2);
     bulbContainer.appendChild(bulbRow);
   }
-  clearInterval(timerId);
+  clearInterval(timerId);}
+  else{
+    alert("Enter Rows less than 46");
+  }
 }
 
 function runningLights() {

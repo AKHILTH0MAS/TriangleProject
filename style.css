@@ -33,6 +33,7 @@ h2 {
 }
 .inputRow input {
   border: none;
+  width: 100%;
   border-bottom: 1px solid #909090;
 }
 
@@ -59,7 +60,7 @@ h2 {
   margin: 10px auto;
   padding: 16px;
   border-radius: 20px;
-  width: 432px;
+  min-width: 432px;
 }
 .bulb{
   width: 20px;
