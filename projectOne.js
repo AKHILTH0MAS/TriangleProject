@@ -26,6 +26,7 @@ let i = 0;
 function startFunction() {
   bulbContainer.innerHTML = "";
   let numberofrows = document.getElementById("numberofRows").value;
+  document.querySelector(".start").style.display = "block";
   bulbContainer.style.background = "#FFF";
   for (let i = 0; i < numberofrows; i++) {
     let bulbRow = document.createElement("div");
@@ -40,15 +41,16 @@ function startFunction() {
     } while (j < i + 2);
     bulbContainer.appendChild(bulbRow);
   }
-timerId = 0;
+  clearInterval(timerId);
 }
+
 function runningLights() {
   let delay = document.getElementById("timeOfDelay").value;
   let numberofrows = document.getElementById("numberofRows").value;
   if (delay == 0) {
     alert("Enter delay");
   } else {
-  document.querySelector(".start").style.display ="none";
+    document.querySelector(".start").style.display = "none";
     let j;
     timerId = null;
     timerId = setInterval(() => {
@@ -57,9 +59,14 @@ function runningLights() {
       } else {
         j = i - 1;
       }
-
-      let bulbRow = document.getElementById(`bulbrow${i}`);
-      let bulbs = bulbRow.querySelectorAll(".bulb");
+      let bilbs;
+      try {
+       let bulbRow = document.getElementById(`bulbrow${i}`);
+         bulbs = bulbRow.querySelectorAll(".bulb");
+      }catch(e){
+        let bulbRow = document.getElementById(`bulbrow${ i = i-1}`);  
+         bulbs = bulbRow.querySelectorAll(".bulb");
+      }
       bulbs.forEach((bulb) => {
         bulb.style.background = colors[0];
         bulb.style.boxShadow = `0px 4px 10px ${colors[0]}`;
@@ -76,9 +83,7 @@ function runningLights() {
       } else {
         i = 0;
       }
-    }, delay);
-    console.log(`running TImer id ${timerId}`);
-    removeEventListener("")
+    }, delay * 100);
   }
 }
 document
@@ -87,7 +92,7 @@ document
 document.querySelector(".start").addEventListener("click", runningLights);
 document.querySelector(".stop").addEventListener("click", () => {
   console.log(`xlosing timer id ${timerId}`);
-  document.querySelector(".start").style.display ="block";
+  document.querySelector(".start").style.display = "block";
   clearInterval(timerId);
   console.log(`closed timer id ${timerId}`);
 });
